@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<center>
+<h1>学生信息列表展示页面</h1>
+<table border="1">
+	<tr>
+		<td><input type="checkbox"/></td>
+		<td>学生ID</td>
+		<td>学生姓名</td>
+		<td>学生电话</td>
+		<td>学生年龄</td>
+		<td>学生班级</td>
+		<td>操作</td>
+	</tr>
+	<foreach name="data" item="v">
+		<tr>
+		    <td><input type="checkbox" name="{$v.id}"></td>
+		    <td>{$v.id}</td>
+			<td>{$v.name}</td>
+			<td>{$v.yx}</td>
+			<td>{$v.sr}</td>
+			<td>{$v.dh}</td>
+			<td>
+			<a href="__URL__/index">添加|<a href="{:U('Index/del')}?id={$v.id}">删除|<a href="{:U('Index/updata')}?id={$v.id}">修改</a>
+		    </td>
+		</tr>
+	</foreach>
+</table>
+</center>
+</body>
+</html>
